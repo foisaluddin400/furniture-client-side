@@ -1,0 +1,224 @@
+[
+    {
+      "id": 1,
+      "img": "https://i.ibb.co.com/bX4zF7T/sofa.png",
+      "title": "Modern Sofa",
+      "category": "sofa",
+      "rating": 4.5,
+      "price": 499.99,
+      "description": "A stylish and comfortable sofa, perfect for small spaces.",
+      "color": "white",
+      "popular": true
+    },
+
+    {
+      "id": 2,
+      "img": "https://i.ibb.co.com/bX4zF7T/sofa.png",
+      "title": "Elegant Leather Sofa",
+      "category": "sofa",
+      "rating": 4.7,
+      "price": 799.99,
+      "description": "An elegant leather sofa that adds sophistication to your living room.",
+      "color": "black",
+      "popular": true
+    },
+    {
+      "id": 3,
+      "img": "https://i.ibb.co.com/bX4zF7T/sofa.png",
+      "title": "Convertible Sofa Bed",
+      "category": "sofa",
+      "rating": 4.3,
+      "price": 599.99,
+      "description": "A versatile convertible sofa bed for guests.",
+      "color": "white",
+      "popular": false
+    },
+    {
+      "id": 4,
+      "img": "https://i.ibb.co.com/ggbmT66/bed.png",
+      "title": "Cozy Bed",
+      "category": "bed",
+      "rating": 4.8,
+      "price": 599.99,
+      "description": "A cozy bed with a modern design, ensuring a good night's sleep.",
+      "color": "white",
+      "popular": true
+    },
+    {
+      "id": 5,
+      "img": "https://i.ibb.co.com/ggbmT66/bed.png",
+      "title": "Luxury King Bed",
+      "category": "bed",
+      "rating": 4.9,
+      "price": 899.99,
+      "description": "A luxury king bed designed for comfort and style.",
+      "color": "red",
+      "popular": true
+    },
+    {
+      "id": 6,
+      "img": "https://i.ibb.co.com/ggbmT66/bed.png",
+      "title": "Minimalist Bed Frame",
+      "category": "bed",
+      "rating": 4.4,
+      "price": 399.99,
+      "description": "A minimalist bed frame that fits any bedroom decor.",
+      "color": "red",
+      "popular": false
+    },
+    {
+      "id": 7,
+      "img": "https://i.ibb.co.com/tBK5z35/drwing1.png",
+      "title": "Artistic Drawing Table",
+      "category": "drawing",
+      "rating": 5,
+      "price": 259.99,
+      "description": "A spacious drawing table designed for artists.",
+      "color": "white",
+      "popular": true
+    },
+    {
+      "id": 8,
+      "img": "https://i.ibb.co.com/tBK5z35/drwing1.png",
+      "title": "Adjustable Drafting Table",
+      "category": "drawing",
+      "rating": 5,
+      "price": 319.99,
+      "description": "An adjustable drafting table for precision and comfort.",
+      "color": "white",
+      "popular": true
+    },
+    {
+      "id": 9,
+      "img": "https://i.ibb.co.com/tBK5z35/drwing1.png",
+      "title": "Portable Art Table",
+      "category": "drawing",
+      "rating": 3.0,
+      "price": 199.99,
+      "description": "A portable art table, perfect for on-the-go creativity.",
+      "color": "black",
+      "popular": false
+    },
+    {
+      "id": 10,
+      "img": "https://i.ibb.co.com/QMChsY4/tble.png",
+      "title": "Classic Wooden Table",
+      "category": "table",
+      "rating": 4.2,
+      "price": 349.99,
+      "description": "A beautifully crafted wooden table for dining.",
+      "color": "red",
+      "popular": false
+    },
+    {
+      "id": 11,
+      "img": "https://i.ibb.co.com/QMChsY4/tble.png",
+      "title": "Modern Glass Table",
+      "category": "table",
+      "rating": 5,
+      "price": 399.99,
+      "description": "A modern glass table that enhances any living space.",
+      "color": "black",
+      "popular": true
+    },
+    {
+      "id": 12,
+      "img": "https://i.ibb.co.com/QMChsY4/tble.png",
+      "title": "Round Bistro Table",
+      "category": "table",
+      "rating": 4.4,
+      "price": 199.99,
+      "description": "A round bistro table, perfect for small dining areas.",
+      "color": "white",
+      "popular": false
+    },
+    {
+      "id": 13,
+      "img": "https://i.ibb.co.com/JnxGSRg/cheir.png",
+      "title": "Ergonomic Office Chair",
+      "category": "chair",
+      "rating": 5,
+      "price": 199.99,
+      "description": "An ergonomic chair that provides comfort during long working hours.",
+      "color": "black",
+      "popular": true
+    },
+    {
+      "id": 14,
+      "img": "https://i.ibb.co.com/JnxGSRg/cheir.png",
+      "title": "Stylish Dining Chair",
+      "category": "chair",
+      "rating": 5,
+      "price": 149.99,
+      "description": "A stylish dining chair that complements your dining table.",
+      "color": "red",
+      "popular": true
+    },
+    {
+      "id": 15,
+      "img": "https://i.ibb.co.com/JnxGSRg/cheir.png",
+      "title": "Comfy Lounge Chair",
+      "category": "chair",
+      "rating": 4.4,
+      "price": 249.99,
+      "description": "A comfy lounge chair perfect for relaxing.",
+      "color": "black",
+      "popular": false
+    },
+    {
+      "id": 16,
+      "img": "https://i.ibb.co.com/JnxGSRg/cheir.png",
+      "title": "Comfy Lounge Chair",
+      "category": "chair",
+      "rating": 4.4,
+      "price": 249.99,
+      "description": "A comfy lounge chair perfect for relaxing.",
+      "color": "black",
+      "popular": false
+    },
+    {
+      "id": 17,
+      "img": "https://i.ibb.co.com/QMChsY4/tble.png",
+      "title": "Round Bistro Table",
+      "category": "table",
+      "rating": 4.4,
+      "price": 199.99,
+      "description": "A round bistro table, perfect for small dining areas.",
+      "color": "white",
+      "popular": false
+    },
+    {
+      "id": 18,
+      "img": "https://i.ibb.co.com/tBK5z35/drwing1.png",
+      "title": "Portable Art Table",
+      "category": "drawing",
+      "rating": 3.0,
+      "price": 199.99,
+      "description": "A portable art table, perfect for on-the-go creativity.",
+      "color": "black",
+      "popular": false
+    },
+    {
+      "id": 19,
+      "img": "https://i.ibb.co.com/ggbmT66/bed.png",
+      "title": "Minimalist Bed Frame",
+      "category": "bed",
+      "rating": 4.4,
+      "price": 399.99,
+      "description": "A minimalist bed frame that fits any bedroom decor.",
+      "color": "red",
+      "popular": false
+    },
+    {
+      "id": 20,
+      "img": "https://i.ibb.co.com/bX4zF7T/sofa.png",
+      "title": "Modern Sofa",
+      "category": "sofa",
+      "rating": 4.5,
+      "price": 499.99,
+      "description": "A stylish and comfortable sofa, perfect for small spaces.",
+      "color": "white",
+      "popular": true
+    }
+  ]
+  
