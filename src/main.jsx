@@ -15,6 +15,20 @@ import Contact from './Page/Contact';
 import Login from './Login/Login';
 import Register from './Login/Register';
 import AuthProvider from './AuthProvider/AuthProvider';
+import PrivetRouter from './AuthProvider/PrivetRouter';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import ProductDetails from './Page/ProductDetails';
+import MyCart from './Page/MyCart';
+import NavbarDashboard from './Dashboard/NavbarDashboard';
+import UserHome from './Dashboard/User/UserHome';
+import MyAdress from './Dashboard/User/MyAdress';
+import Payment from './Dashboard/User/Payment';
+import AdminAddProduct from './Dashboard/Admin/AdminAddProduct';
+import AdminEditProduct from './Dashboard/Admin/AdminEditProduct';
+import AdminRollUser from './Dashboard/Admin/AdminRollUser';
+import AdminUserHome from './Dashboard/Admin/AdminUserHome';
+import AdminOrderList from './Dashboard/Admin/AdminOrderList';
+import AdminUpdate from './Dashboard/Admin/AdminUpdate';
 
 
 const router = createBrowserRouter([
@@ -32,7 +46,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/shop",
-        element: <Shop></Shop>
+        element: <PrivetRouter><Shop></Shop></PrivetRouter>
       },
       {
         path: "/contact",
@@ -46,16 +60,93 @@ const router = createBrowserRouter([
         path: "/register",
         element: <Register></Register>
       },
+      
+      {
+        path: "/product/:id",
+        element: <ProductDetails></ProductDetails>,
+        loader: async ({ params }) => {
+          console.log(params.id); // Check if this ID is correct
+          const res = await fetch(`https://furniture-website-server.vercel.app/menu/${params.id}`);
+          if (!res.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return res.json(); // Make sure you return the JSON data
+        }
+        
+        
+        
+      },
+
+      //dashboard
+      {
+        path: "/",
+        element: <NavbarDashboard></NavbarDashboard>,
+        children:[
+
+          //user
+          {
+            path: "/cart",
+            element: <MyCart></MyCart>
+          },
+          {
+            path: "/userhome",
+            element: <UserHome></UserHome>
+          },
+          {
+            path: "/myadress",
+            element: <MyAdress></MyAdress>
+          },
+          {
+            path: "/payment",
+            element: <Payment></Payment>
+          },
+
+          //admin
+          {
+            path: "/adminaddproduct",
+            element: <AdminAddProduct></AdminAddProduct>
+          },
+          {
+            path: "/admineditproduct",
+            element: <AdminEditProduct></AdminEditProduct>
+          },
+          {
+            path: "/adminroll",
+            element: <AdminRollUser></AdminRollUser>
+          },
+          {
+            path: "/adminuser",
+            element: <AdminUserHome></AdminUserHome>
+          },
+          {
+            path: "/adminorder",
+            element: <AdminOrderList></AdminOrderList>
+          },
+          {
+            path: "/adminupdate/:id",
+            element: <AdminUpdate></AdminUpdate>,
+            loader: ({params})=> fetch(`https://furniture-website-server.vercel.app/menu/${params.id}`)
+          },
+
+
+        ]
+      },
+      
+      
     ],
   },
 ]);
 
+const queryClient = new QueryClient()
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AuthProvider>
-    <div className='max-w-screen-2xl mx-auto'>
-    <RouterProvider router={router} />
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <div className='max-w-screen-2xl mx-auto '>
+        <RouterProvider router={router} />
+      </div>
+    </QueryClientProvider>
     </AuthProvider>
   </StrictMode>,
 )

@@ -1,23 +1,54 @@
 
 import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import Swal from 'sweetalert2';
+import UseAxiosPublic from '../UseHook/UseAxiosPublic';
+
 
 const Register = () => {
     const { register, handleSubmit } = useForm()
     const {createUser} = useContext(AuthContext)
-    
+    const navigate = useNavigate()
+    const axiosPublic = UseAxiosPublic()
   const onSubmit = (data) => {
     console.log(data)
     createUser(data.email,data.password)
     .then(result=> {
         console.log(result.user)
+        const userInfo = {
+          email:data.email,
+          name: data.name
+        }
+        axiosPublic.post('/users', userInfo)
+        .then(res => {
+          if (res.data.insertedId) {
+            console.log('user added sucessfull');
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Login Successfully",
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }
+        })
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Your work has been saved",
+            showConfirmButton: false,
+            timer: 1500
+          });
+          navigate('/')
     })
     .then(error=>{
         console.error(error)
     })
 }
+
+
     return (
         <div>
         <div className="shopBack">
