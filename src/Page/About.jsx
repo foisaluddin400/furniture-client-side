@@ -10,7 +10,9 @@ export default function About() {
   
   return (
     <div>about
-      {user.email}
+      {user?.email}
+
+      <h1 className="mt-5 text-2xl p-11">Create Pending...</h1>
     </div>
   )
 }

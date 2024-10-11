@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function Contact() {
   return (
-    <div>Contact</div>
+    <div><h1 className="mt-5 text-2xl p-11">Create Pending...</h1></div>
   )
 }
