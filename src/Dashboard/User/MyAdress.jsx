@@ -4,6 +4,7 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { useForm } from 'react-hook-form';
 import UseAxiosSecure from '../../UseHook/UseAxiosSecure';
 import UseAdress from '../../UseHook/UseAdress';
+import Swal from 'sweetalert2';
 
 export default function MyAdress() {
     const { user } = useContext(AuthContext);
@@ -42,7 +43,16 @@ export default function MyAdress() {
 
     axiosSecure.post("/adress", userInfo)
       .then((res) => {
-        console.log(res.data);
+        if (res.data.insertedId) {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: 'Adress Added successfull',
+            showConfirmButton: false,
+            timer: 1500
+          });
+          refetch();
+      }
         refetch()
       })
       .catch((error) => {
@@ -104,7 +114,7 @@ export default function MyAdress() {
     disabled={hasAddress}
   />
   
-  <input className="bg-red-600 mt-5 text-white px-6 py-3" type="submit" disabled={hasAddress} /> 
+  <input className="bg-[#B88E2F] mt-5 text-white px-6 py-3" type="submit" disabled={hasAddress} /> 
 </form>
 
 </div>
@@ -120,7 +130,10 @@ export default function MyAdress() {
       <h1>Country: {adres.country}</h1>
     </div>
   ))}
-  <Link className="bg-sky-600 text-white px-5 py-2" to='/userhome'><button>Edit</button></Link>
+  <div>
+  <Link className="bg-sky-600 text-white px-5 py-2" to='/userhome'><button className='mt-4'>Edit</button></Link>
+  
+  </div>
 </div>
 </div>
 </div>

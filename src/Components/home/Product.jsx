@@ -7,7 +7,7 @@ import UseCart from "../../UseHook/UseCart";
 import Swal from "sweetalert2";
 
 const Product = ({ product }) => {
-  const {_id, title, img, rating, price,color } = product;
+  const {_id, title, img, rating, price,color ,category} = product;
   const [isHovered, setIsHovered] = useState(false);
   const {user} = useContext(AuthContext);
   const navigate = useNavigate();
@@ -24,6 +24,7 @@ const Product = ({ product }) => {
         img,
         price,
         color,
+        category,
       };
       axiosSecure.post("/carts", cartItem)
       .then(res=>{

@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import UseAxiosSecure from '../../UseHook/UseAxiosSecure';
 import UseAdress from '../../UseHook/UseAdress';
+import Swal from 'sweetalert2';
 
 export default function UserHome() {
 
@@ -42,8 +43,17 @@ export default function UserHome() {
     axiosSecure
       .put(`/adress/${addressId}`, inputValues)
       .then((res) => {
-        console.log(res.data);
-        alert("Address updated successfully!");
+        if (res.data.modifiedCount > 0) {
+          console.log(res.data)
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: 'Update Successfull',
+            showConfirmButton: false,
+            timer: 1500
+          });
+          refetch();
+      }
       })
       .catch((error) => {
         console.error(error);
@@ -100,7 +110,7 @@ export default function UserHome() {
             placeholder="Country" 
           />
           <button
-            className="bg-red-600 mt-5 text-white p-3"
+            className="bg-[#B88E2F] mt-5 text-white p-3"
             onClick={handleUpdate}
           >
             Update Address

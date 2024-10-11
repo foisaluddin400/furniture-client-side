@@ -29,6 +29,8 @@ import AdminRollUser from './Dashboard/Admin/AdminRollUser';
 import AdminUserHome from './Dashboard/Admin/AdminUserHome';
 import AdminOrderList from './Dashboard/Admin/AdminOrderList';
 import AdminUpdate from './Dashboard/Admin/AdminUpdate';
+import AdminRout from './AuthProvider/AdminRout';
+import PaymentHistory from './Dashboard/User/PaymentHistory';
 
 
 const router = createBrowserRouter([
@@ -100,31 +102,34 @@ const router = createBrowserRouter([
             path: "/payment",
             element: <Payment></Payment>
           },
-
+          {
+            path: "/paymenthistory",
+            element: <PaymentHistory></PaymentHistory>
+          },
           //admin
           {
             path: "/adminaddproduct",
-            element: <AdminAddProduct></AdminAddProduct>
+            element: <AdminRout><AdminAddProduct></AdminAddProduct></AdminRout>
           },
           {
             path: "/admineditproduct",
-            element: <AdminEditProduct></AdminEditProduct>
+            element: <AdminRout><AdminEditProduct></AdminEditProduct></AdminRout>
           },
           {
             path: "/adminroll",
-            element: <AdminRollUser></AdminRollUser>
+            element: <AdminRout><AdminRollUser></AdminRollUser></AdminRout>
           },
           {
             path: "/adminuser",
-            element: <AdminUserHome></AdminUserHome>
+            element: <AdminRout><AdminUserHome></AdminUserHome></AdminRout>
           },
           {
             path: "/adminorder",
-            element: <AdminOrderList></AdminOrderList>
+            element: <AdminRout><AdminOrderList></AdminOrderList></AdminRout>
           },
           {
             path: "/adminupdate/:id",
-            element: <AdminUpdate></AdminUpdate>,
+            element: <AdminRout><AdminUpdate></AdminUpdate></AdminRout>,
             loader: ({params})=> fetch(`https://furniture-website-server.vercel.app/menu/${params.id}`)
           },
 

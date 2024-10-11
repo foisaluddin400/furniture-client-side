@@ -7,7 +7,7 @@ import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
     const { register, handleSubmit } = useForm()
-    const {SignInUser,googleCreateUser} = useContext(AuthContext)
+    const {SignInUser} = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
     const from = location.state?.from?.pathname || '/';
@@ -29,23 +29,7 @@ const Login = () => {
     })
 
   }
-  const hndleGoogleLogin =()=>{
-    googleCreateUser()
-    .then(result => {
-        console.log(result.user);
-        Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "Login Successfully",
-            showConfirmButton: false,
-            timer: 1500
-        });
-        navigate(from, { replace: true });
-    })
-    .then(error => {
-        console.error(error)
-    })
-}
+  
   return (
     <div>
         <div className="shopBack">
@@ -60,9 +44,7 @@ const Login = () => {
         </form>
         <p className="mt-3"><Link className='text-[#B88E2F]' to='/register'>Register</Link> Account?</p>
 
-        <div onClick={hndleGoogleLogin} className="w-full p-2 border flex justify-center rounded-md mt-3 text-3xl">
-        <FcGoogle />
-        </div>
+        
       </div>
     </div>
   );

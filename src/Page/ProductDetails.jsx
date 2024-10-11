@@ -34,6 +34,7 @@ const ProductDetails = () => {
         price,
         color: selectedColor, 
         quantity,
+        category
          
       };
       axiosSecure.post("/carts", cartItem).then((res) => {
