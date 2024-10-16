@@ -58,7 +58,7 @@ const Register = () => {
         <h1 className='mt-3 text-3xl font-semibold mb-4'>Register Now</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
 
-          <input {...register("name")} className="w-full p-3 border border-stone-400 bg-white rounded-md"  placeholder="Your Email"/>
+          <input {...register("name")} className="w-full p-3 border border-stone-400 bg-white rounded-md"  placeholder="Your Name"/>
           <input {...register("email")} className="w-full p-3 mt-3 border border-stone-400 bg-white rounded-md" placeholder="Your Email"/>
           <input {...register("password")} className="w-full border border-stone-400 bg-white rounded-md p-3 my-3" placeholder="Your Password"/>
           <input className="bg-[#B88E2F] px-5 py-2 w-full rounded-md text-white " type="submit" value="Login" />

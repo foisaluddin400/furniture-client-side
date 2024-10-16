@@ -51,7 +51,6 @@ const Shops = () => {
       return matchCategory && matchColor && matchPrice;
     });
 
-    // Add search term filtering
     if (searchTerm) {
       filtered = filtered.filter((product) =>
         product.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -66,8 +65,8 @@ const Shops = () => {
   };
 
   const handleSearchSubmit = (e) => {
-    e.preventDefault(); // Prevent form submission
-    applyFilters(e); // Reapply filters including the search term
+    e.preventDefault(); 
+    applyFilters(e); 
   };
 
   return (
